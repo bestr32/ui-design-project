@@ -1,0 +1,33 @@
+body {
+  font-family: system-ui;
+  min-height: 100vh;
+}
+
+.wave-bg {
+  position: absolute;
+  bottom: 0;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.artist {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+#genres {
+  display: flex;
+  gap: 1em;
+  margin-top: 1rem;
+}
+
+.genre {
+  text-transform: capitalize;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
