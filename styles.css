@@ -21,20 +21,15 @@ a {
   padding: 0.8rem 2rem;
   background: linear-gradient(90deg, #BBC6CD 9.22%, #91CCBB 100%);
   border-radius: 75px;
+  /* To-do: Get Lato */
   /* font-family: 'Lato'; */
-  font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
   display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.135em;
-
-color: #FFFFFF;
-
-text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
-
+  color: #ffffff;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
 }
 
 .nav-list {
@@ -54,7 +49,7 @@ text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
 header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .artist {
@@ -78,14 +73,15 @@ header {
 }
 
 .logo {
-  width: 30%;
-  max-width: 500px;
+  width: 20%;
+  max-width: 250px;
   margin-left: 80px;
 }
 
 .right-side {
   margin-right: 10rem;
 }
+
 .right-side img {
   height: 50px;
 }
