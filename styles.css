@@ -3,11 +3,6 @@ body {
   min-height: 100vh;
 }
 
-.wave-bg {
-  position: absolute;
-  bottom: 0;
-}
-
 p {
   line-height: 1.5;
 }
