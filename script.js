@@ -15,14 +15,14 @@ fetch(test).then((res) => {
 		genres: [...data.artist.tags.tag]
 	};
 
-	document.getElementById('artist-name').textContent = important_data.name;
-	document.getElementById('test').textContent = important_data.short_bio;
+	// document.getElementById('artist-name').textContent = important_data.name;
+	// document.getElementById('test').textContent = important_data.short_bio;
 
-	important_data.genres.forEach((genre) => {
-		let gn = create_element('div', ['genre'], genre.name);
+	// important_data.genres.forEach((genre) => {
+	// 	let gn = create_element('div', ['genre'], genre.name);
 
-		document.getElementById('genres').appendChild(gn);
-	});
+	// 	document.getElementById('genres').appendChild(gn);
+	// });
 });
 
 // Helper function to create elements with less headache and typing.

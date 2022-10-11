@@ -1,10 +1,47 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: system-ui;
   min-height: 100vh;
+  margin: 0;
 }
 
 p {
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  border-radius: 1.2rem;
+  background-color: #bad5d1;
+  padding: 0.8rem 2rem;
+
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
 }
 
 .artist {
