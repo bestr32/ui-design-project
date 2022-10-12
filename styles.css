@@ -89,4 +89,20 @@ header {
 .music-player {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.player-buttons {
+  height: 54px;
+  width: 54px;
+  position: absolute;
+  top: 250px;
+  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+img .music-player {
+  width: 30%;
 }
