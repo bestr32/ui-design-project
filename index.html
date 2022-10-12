@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css" media="all">
     <title>utop.ia</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -12,7 +16,7 @@
       <img class="logo" src="./logo.png" alt="logo">
 
 
-      <div class="right-side">
+      <div class="animate fadeInRight right-side">
         <nav>
           <ul class="nav-list">
             <li>
@@ -38,6 +42,8 @@
           <!-- search bar -->
       </div>
     </header>
+
+    
     <div class="artist">
       <h1 id="artist-name"></h1>
       <p id="test"></p>
@@ -46,15 +52,14 @@
 
     <div id="particles"></div>
 
-    <div class="music-player">
-      <img src="./musicplayer.png" alt="music player">
+    <div class="animate fadeInDown music-player">
+      <img id="music-player" src="./musicplayer.png" alt="music player">
       
       <div class="player-buttons">
         <img src="./leftplaybutton.png" alt="left player button">
         <img src="./playbutton.png" alt="player button">
         <img src="./rightplaybutton.png" alt="right player button">
       </div>
-
     </div>
 
 
