@@ -85,3 +85,8 @@ header {
 .right-side img {
   height: 50px;
 }
+
+.music-player {
+  display: flex;
+  justify-content: center;
+}
