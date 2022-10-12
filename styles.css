@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: system-ui;
+  font-family: 'Lato', sans-serif;
   min-height: 100vh;
   margin: 0;
 }
@@ -21,8 +21,7 @@ a {
   padding: 0.8rem 2rem;
   background: linear-gradient(90deg, #BBC6CD 9.22%, #91CCBB 100%);
   border-radius: 75px;
-  /* To-do: Get Lato */
-  /* font-family: 'Lato'; */
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -38,12 +37,16 @@ a {
   padding: 0;
   display: flex;
   gap: 1rem;
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+  animation-delay: 3.5s;
 }
 
 .right-side {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-right: 10rem;
 }
 
 header {
@@ -78,10 +81,6 @@ header {
   margin-left: 80px;
 }
 
-.right-side {
-  margin-right: 10rem;
-}
-
 .right-side img {
   height: 50px;
 }
@@ -90,19 +89,69 @@ header {
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 2.5rem;
+}
+
+#music-player {
+  width: 30%;
 }
 
 .player-buttons {
   height: 54px;
   width: 54px;
   position: absolute;
-  top: 250px;
+  top: 190px;
   gap: 1.5rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
-img .music-player {
-  width: 30%;
+
+
+.animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
