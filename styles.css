@@ -86,21 +86,20 @@ header {
 }
 
 .music-player {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: .9rem;
   width: 30%;
   max-width: 550px;
+  min-height: 265px;
+  padding: 1em 0;
   margin: 0 auto;
   border-radius: 3rem;
   /* background: linear-gradient(135deg, #f4f4f4, #adc7c1fb); */
   /* background: linear-gradient(215deg, #f4f4f4, #adc7c1fb); */
   background: linear-gradient(215deg, #e0e1e4, #c9e2e1fb);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin-top: 2.5rem;
-  min-height: 265px;
-  gap: .9rem;
-  padding: 1em 0;
+  margin-top: 2rem;
 }
 
 #music-player {
