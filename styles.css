@@ -1,9 +1,11 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   min-height: 100vh;
   margin: 0;
 }
@@ -17,18 +19,58 @@ a {
   letter-spacing: 1px;
 }
 
-.nav-link {
-  padding: 0.8rem 2rem;
-  background: linear-gradient(90deg, #BBC6CD 9.22%, #91CCBB 100%);
-  border-radius: 75px;
-  font-family: 'Lato', sans-serif;
+a:visited {
+  color: black;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: #a3e4cb;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.cta span {
+  position: relative;
+  line-height: 18px;
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.135em;
-  color: #ffffff;
-  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.cta:hover:before {
+  width: 100%;
+  background: #a3e4cb;
+}
+.cta:hover svg {
+  transform: translateX(0);
+}
+.cta:active {
+  transform: scale(0.96);
 }
 
 .nav-list {
@@ -89,7 +131,7 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: .9rem;
+  gap: 0.9rem;
   width: 30%;
   max-width: 550px;
   min-height: 265px;
@@ -177,4 +219,28 @@ header {
     -webkit-transform: none;
     transform: none;
   }
+}
+
+.particles,
+#particle1,
+#particle2,
+#particle3 {
+  position: absolute;
+}
+
+#particle1 {
+  top: 50px;
+}
+
+#particle2 {
+  left: 900px;
+  rotate: 45deg;
+  /* -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  animation-delay: 1.5s; */
+}
+
+#particle3 {
+  scale: 35%;
+  top: 200px;
 }
