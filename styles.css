@@ -96,7 +96,7 @@ input::-webkit-search-cancel-button {
 }
 
 input[type=search] {
-  background: #d6d6d6 url("./media/search.png") no-repeat 9px center;
+  background: #fff url("./media/search.png") no-repeat 9px center;
   background-size: 20px;
 
   border: solid 1px #ccc;
