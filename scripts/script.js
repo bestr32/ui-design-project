@@ -22,13 +22,8 @@ const fetch_music = (query_type, query_subtype, artist_name="") => {
 }
 
 const fetch_audio = (track_title) => {
-	fetch(`http://localhost:3000/track?title=${track_title}`).then((res) => res.json()).then((data) => {
-		console.log(data);
-	});
-}
-
-// Testing new function to get YT link.
-fetch_audio("killstation vengeance");
+	return fetch(`http://localhost:3000/track?title=${encodeURIComponent(track_title)}`).then((res) => res.json());
+};
 
 // Helper function to create elements with less headache and typing.
 const create_element = (type, classes, content) => {

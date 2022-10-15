@@ -11,3 +11,13 @@ window.onload = (event) => {
 	});
 }
 
+document.getElementById('search-form').addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	fetch_audio(e.target[0].value).then((data) => {
+		console.log(data);
+	});
+
+	e.target.reset();
+
+});

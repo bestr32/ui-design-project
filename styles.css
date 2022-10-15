@@ -17,6 +17,7 @@ p {
 a {
   text-decoration: none;
   letter-spacing: 1px;
+  color: black;
 }
 
 a:visited {
@@ -33,15 +34,16 @@ a:visited {
 .cta:before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: block;
   border-radius: 28px;
   background: #a3e4cb;
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   transition: all 0.3s ease;
 }
+
 .cta span {
   position: relative;
   line-height: 18px;
@@ -50,6 +52,7 @@ a:visited {
   text-transform: uppercase;
   vertical-align: middle;
 }
+
 .cta svg {
   position: relative;
   top: 0;
@@ -62,16 +65,97 @@ a:visited {
   transform: translateX(-5px);
   transition: all 0.3s ease;
 }
+
 .cta:hover:before {
   width: 100%;
   background: #a3e4cb;
 }
+
 .cta:hover svg {
   transform: translateX(0);
 }
+
 .cta:active {
   transform: scale(0.96);
 }
+
+input {
+  outline: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+#search-form {
+  width: 180px;
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+input[type=search] {
+  background: #fff url("./media/search.png") no-repeat 9px center;
+  background-size: 20px;
+
+  border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+
+  -webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+input[type=search]:focus {
+  width: 100%;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+input:-moz-placeholder {
+	color: #999;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+#search-form input[type=search] {
+	width: 38px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+
+#search-form input[type=search]:hover {
+	background-color: #fff;
+}
+
+#search-form input[type=search]:focus {
+	width: 100%;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+
+#search-form input:-moz-placeholder {
+	color: transparent;
+}
+
+#search-form input::-webkit-input-placeholder {
+	color: transparent;
+}
+
 
 .nav-list {
   list-style: none;
