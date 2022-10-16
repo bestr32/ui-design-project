@@ -344,26 +344,20 @@ header {
   }
 }
 
-.particles,
-#particle1,
-#particle2,
-#particle3 {
+.particles img{
   position: absolute;
+  left: -138px;
+  scale: 70%;
+  max-width: 550px;
+  max-height: 550px;
 }
 
-#particle1 {
-  top: 50px;
+.particle2 img {
+  left: 775px;
+  scale: 100%;
+  rotate: -10deg;
 }
 
-#particle2 {
-  left: 900px;
-  rotate: 45deg;
-  /* -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
-  animation-delay: 1.5s; */
-}
-
-#particle3 {
-  scale: 35%;
-  top: 200px;
+.particle1 img {
+  rotate: 90deg;
 }
