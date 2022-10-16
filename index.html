@@ -50,8 +50,11 @@
     </div>
 
     <div class="animate fadeInDown music-player">
+      <audio id="audio-player" src="" autoplay></audio>
       
       <!-- Track info will go here through JS. Div is empty because text will be input logically with JS. -->
+      <h1 id="title-track"></h1>
+      <img id="thumbnail" src="" alt=""/>
       <div id="track-info" style="flex: 1;"></div>
 
       <!-- Line above buttons -->
@@ -69,13 +72,15 @@
           id="play-button"
           style="background-color: #9acfc2; width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: none; cursor: pointer; "
           >
-          <div style="width: 0;
+          <div class="playing" style="width: 0;
             height: 0;
             border-top: 12px solid transparent;
             border-left: 22px solid #fff;
             transform: translateX(10%);
             border-bottom: 12px solid transparent;">
           </div>
+          <div class="paused first-line" style="width: 0; height: 0; border-top: 15px solid #fff; border-bottom: 15px solid #fff; border-left: 3px solid #fff;"></div>
+          <div class="paused" style="width: 0; height: 0; border-top: 15px solid #fff; border-bottom: 15px solid #fff; border-left: 3px solid #fff;"></div>
         </button>
         <!-- <img src="./media/playbutton.png" alt="player button"> -->
         <!-- <img src="./media/rightplaybutton.png" alt="right player button"> -->

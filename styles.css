@@ -31,6 +31,44 @@ a:visited {
   transition: all 0.2s ease;
 }
 
+.paused {
+  display: none;
+}
+
+.first-line {
+  margin-right: 8px;
+}
+
+#thumbnail {
+  border-radius: 2rem;
+  margin-inline: 1rem;
+  animation: blurinf 3s infinite ease-in;
+}
+
+#title-track {
+  letter-spacing: 1px;
+  text-shadow: 0 0 .715rem #0003;
+  font-weight: 400;
+}
+
+@keyframes blurinf {
+  0% {
+    filter: blur(0);
+  }
+
+  60% {
+    filter: blur(5px);
+  }
+
+  65% {
+    filter: blur(6px);
+  }
+
+  90% {
+    filter: blur(0);
+  }
+}
+
 .cta:before {
   content: "";
   position: absolute;
@@ -219,6 +257,7 @@ header {
   width: 30%;
   max-width: 550px;
   min-height: 265px;
+  text-align: center;
   padding: 1em 0;
   margin: 0 auto;
   border-radius: 3rem;
