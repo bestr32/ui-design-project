@@ -26,7 +26,7 @@ const fetch_audio = (track_title) => {
 };
 
 // Helper function to create elements with less headache and typing.
-const create_element = (type, classes, content) => {
+const create_element = (type, classes=0, content="") => {
 	let temp = document.createElement(type);
 
 	if (classes)
