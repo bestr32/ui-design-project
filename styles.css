@@ -28,6 +28,9 @@ body {
   font-size: 0.9rem;
 }
 
+#temp-holder {
+}
+
 #progress-bar {
   width: 70%;
   margin: 0 auto;
@@ -159,6 +162,7 @@ a:visited {
 #title-track {
   letter-spacing: 1px;
   font-weight: 400;
+  flex: 1;
 }
 
 .cta {

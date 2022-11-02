@@ -57,132 +57,131 @@
     <div class="animate fadeInDown music-player">
       <audio id="audio-player" src="" autoplay></audio>
 
-      <div>
         <h2 id="title-track"></h2>
-        <p id="title-duration-info"></p>
-      </div>
 
-      <div id="audio-track-progress">
-        <p id="current-track-time"></p>
-
-        <div id="progress-bar">
-          <div id="progress-line"></div>
+      <div id="temp-holder">
+        <div id="audio-track-progress">
+          <p id="current-track-time"></p>
+        
+          <div id="progress-bar">
+            <div id="progress-line"></div>
+          </div>
+        
+          <p id="track-duration"></p>
         </div>
-
-        <p id="track-duration"></p>
-      </div>
-
-      <div class="player-buttons">
-        <button
-          style="
-            display: flex;
-            align-items: center;
-            gap: 0.3em;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            filter: drop-shadow(0 0 0.3rem #0003);
-          "
-        >
-          <div
+        
+        <div class="player-buttons">
+          <button
             style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid transparent;
-              border-right: 26px solid #fff;
-              border-bottom: 15px solid transparent;
+              display: flex;
+              align-items: center;
+              gap: 0.3em;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              filter: drop-shadow(0 0 0.3rem #0003);
             "
-          ></div>
-          <div
+          >
+            <div
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-right: 26px solid #fff;
+                border-bottom: 15px solid transparent;
+              "
+            ></div>
+            <div
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid #fff;
+                border-bottom: 15px solid #fff;
+                border-left: 3px solid #fff;
+              "
+            ></div>
+          </button>
+        
+          <button
+            id="play-button"
             style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid #fff;
-              border-bottom: 15px solid #fff;
-              border-left: 3px solid #fff;
+              background-color: black;
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: none;
+              cursor: pointer;
             "
-          ></div>
-        </button>
-
-        <button
-          id="play-button"
-          style="
-            background-color: black;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            cursor: pointer;
-          "
-        >
-          <div
-            class="playing"
+          >
+            <div
+              class="playing"
+              style="
+                width: 0;
+                height: 0;
+                border-top: 12px solid transparent;
+                border-left: 22px solid #fff;
+                transform: translateX(10%);
+                border-bottom: 12px solid transparent;
+              "
+            ></div>
+            <div
+              class="paused first-line"
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid #fff;
+                border-bottom: 15px solid #fff;
+                border-left: 3px solid #fff;
+              "
+            ></div>
+            <div
+              class="paused"
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid #fff;
+                border-bottom: 15px solid #fff;
+                border-left: 3px solid #fff;
+              "
+            ></div>
+          </button>
+          <!-- <img src="./media/playbutton.png" alt="player button"> -->
+          <!-- <img src="./media/rightplaybutton.png" alt="right player button"> -->
+        
+          <button
             style="
-              width: 0;
-              height: 0;
-              border-top: 12px solid transparent;
-              border-left: 22px solid #fff;
-              transform: translateX(10%);
-              border-bottom: 12px solid transparent;
+              display: flex;
+              align-items: center;
+              gap: 0.3em;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              filter: drop-shadow(0 0 0.3rem #0003);
             "
-          ></div>
-          <div
-            class="paused first-line"
-            style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid #fff;
-              border-bottom: 15px solid #fff;
-              border-left: 3px solid #fff;
-            "
-          ></div>
-          <div
-            class="paused"
-            style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid #fff;
-              border-bottom: 15px solid #fff;
-              border-left: 3px solid #fff;
-            "
-          ></div>
-        </button>
-        <!-- <img src="./media/playbutton.png" alt="player button"> -->
-        <!-- <img src="./media/rightplaybutton.png" alt="right player button"> -->
-
-        <button
-          style="
-            display: flex;
-            align-items: center;
-            gap: 0.3em;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            filter: drop-shadow(0 0 0.3rem #0003);
-          "
-        >
-          <div
-            style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid #fff;
-              border-bottom: 15px solid #fff;
-              border-left: 3px solid #fff;
-            "
-          ></div>
-          <div
-            style="
-              width: 0;
-              height: 0;
-              border-top: 15px solid transparent;
-              border-left: 26px solid #fff;
-              border-bottom: 15px solid transparent;
-            "
-          ></div>
-        </button>
+          >
+            <div
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid #fff;
+                border-bottom: 15px solid #fff;
+                border-left: 3px solid #fff;
+              "
+            ></div>
+            <div
+              style="
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-left: 26px solid #fff;
+                border-bottom: 15px solid transparent;
+              "
+            ></div>
+          </button>
+        </div>
       </div>
     </div>
 
