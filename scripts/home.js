@@ -15,6 +15,8 @@ window.onload = (event) => {
 	});
 };
 
+let search_results_div = document.getElementById("video-search-results");
+
 document.getElementById("search-form").addEventListener("submit", (e) => {
 	e.preventDefault();
 
@@ -24,6 +26,8 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 		.then((res) => res.json())
 		.then((data) => {
 			console.log(data);
+
+			search_results_div.textContent = "";
 
 			for (const video of data) {
 				console.log(video);
@@ -45,18 +49,58 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 				const link_wrapper = create_element("a", ["link-wrapper"]);
 				link_wrapper.href = `http://localhost:3000/audio?id=${video.id.videoId}&title=${video.title}`;
 
-				link_wrapper.addEventListener("click", (e) => {
+				link_wrapper.addEventListener("click", async function (e) {
 					e.preventDefault();
 
-					music.setAttribute(
-						"src",
-						`http://localhost:3000/audio?id=${video.id.videoId}&title=${video.title}`
+					const audio = await fetch(
+						`http://localhost:3000/audio?id=${video.id.videoId}&title=${video.title}`,
+						{ headers: { "Accept-Ranges": "bytes" } }
 					);
+
+					const blob = await audio.blob();
+
+					if (blob) music.setAttribute("src", URL.createObjectURL(blob));
+
+					// music.setAttribute(
+					// 	"src",
+					// 	`http://localhost:3000/audio?id=${video.id.videoId}&title=${video.title}`
+					// );
+
 					document.getElementById("title-track").textContent = video.title;
-					thumbnail.setAttribute(
-						"src",
-						`${video.snippet.thumbnails.default.url}`
-					);
+
+					music.onloadedmetadata = function () {
+						document
+							.getElementById("progress-bar")
+							.addEventListener("click", (e) => {
+								let rect = e.target.getBoundingClientRect();
+								let x = e.clientX - rect.left;
+								let length =
+									document.getElementById("progress-bar").offsetWidth;
+
+								console.log(x);
+
+								document.getElementById("progress-line").style.width = `${
+									(x / length) * 100
+								}%`;
+
+								console.log("Pressed:", (x / length) * music.duration);
+								console.log("Full duration:", music.duration);
+
+								music.currentTime = (x / length) * music.duration;
+							});
+
+						music.ontimeupdate = function () {
+							document.getElementById("progress-line").style.width = `${
+								(music.currentTime / music.duration) * 100
+							}%`;
+
+							document.getElementById(
+								"title-duration-info"
+							).textContent = `${convert_time(
+								music.currentTime
+							)} / ${convert_time(music.duration)}`;
+						};
+					};
 				});
 
 				link_wrapper.appendChild(video_data_div);
@@ -66,11 +110,6 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 					.appendChild(link_wrapper);
 			}
 		});
-
-	// fetch_audio(e.target[0].value).then((data) => {
-	// 	console.log(data);
-
-	// });
 
 	e.target.reset();
 });

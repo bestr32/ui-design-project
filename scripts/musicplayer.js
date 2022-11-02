@@ -21,7 +21,6 @@ document.getElementById("play-button").addEventListener("click", () => {
 		paused_icons.forEach((line) => {
 			line.style.display = "inline";
 		});
-		document.getElementById("thumbnail").style.animationPlayState = "paused";
 	} else {
 		music.play();
 
@@ -29,6 +28,5 @@ document.getElementById("play-button").addEventListener("click", () => {
 		paused_icons.forEach((line) => {
 			line.style.display = "none";
 		});
-		document.getElementById("thumbnail").style.animationPlayState = "running";
 	}
 });
