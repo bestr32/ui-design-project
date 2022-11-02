@@ -94,11 +94,14 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 								(music.currentTime / music.duration) * 100
 							}%`;
 
-							document.getElementById(
-								"title-duration-info"
-							).textContent = `${convert_time(
-								music.currentTime
-							)} / ${convert_time(music.duration)}`;
+							// document.getElementById(
+							// 	"title-duration-info"
+							// ).textContent = `${convert_time(
+							// 	music.currentTime
+							// )} / ${convert_time(music.duration)}`;
+
+							document.getElementById("current-track-time").textContent = convert_time(music.currentTime);
+							document.getElementById("track-duration").textContent = convert_time(music.duration);
 						};
 					};
 				});
