@@ -84,7 +84,7 @@ body {
   /* width: clamp(200px, 20vw, 700px); */
   height: 70%;
   width: 30%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   display: flex;
   flex-direction: column;
   gap: 1rem;
