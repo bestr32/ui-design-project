@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  --green: #a3e4cb;
+  --green-hover: #a3eaae;
+  --green-focus: #33af8f;
+}
+
+img[width="20%"] {
+  margin-left: 80px;
+  max-width: 250px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f6f6;
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 0.3fr;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+}
+
+section {
+  width: clamp(260px, 30%, 350px);
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 1rem #0002;
+  border-radius: 5px;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #0805;
+  position: relative;
+}
+
+section::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  background-color: #a3e4cb;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+header {
+  padding: clamp(1rem, 3.5vw, 1.7rem) clamp(1rem, 3.5vw, 1.7rem);
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0.8rem;
+  background-color: white;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  width: 20%;
+  height: 2px;
+  background-color: #a3e4cb;
+  /* border: 1px solid black; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 70%;
+  margin: 3.3rem auto;
+}
+
+input {
+  border-radius: 5px;
+  /* background-color: #a3e4cb; */
+  border: none;
+  padding: 0.5rem 0.5rem;
+  background-color: #e6ebec;
+  outline: 2px solid white;
+}
+
+input:focus {
+  transition: outline 0.2s;
+}
+
+body *:focus {
+  outline: 2px solid #a3e4cb;
+  outline-offset: 1px;
+}
+
+form button {
+  width: 30%;
+  align-self: flex-end;
+  border: none;
+  background-color: #a3e4cb;
+  letter-spacing: 1px;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  outline-offset: 1px;
+  outline: 2px solid #a3e4cb;
+}
+
+form button:hover,
+form button:focus {
+  background-color: var(--green-hover);
+  outline: 2px solid var(--green-focus);
+  transition: outline 0.3s;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 2rem;
+  font-weight: 200;
+}
+
+section a {
+  display: block;
+  text-decoration: underline;
+  margin: 0.8rem;
+  font-size: 0.9rem;
+  color: black;
+}
+
+section a:hover {
+  text-decoration: none;
+}
+
+footer a {
+  padding: 1rem 2rem;
+}
+
+footer a:hover {
+  background-color: #a3e4cb;
+  color: black;
+  box-shadow: 0 0 0.3rem #0003;
+}
