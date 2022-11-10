@@ -17,16 +17,16 @@ document.getElementById("play-button").addEventListener("click", () => {
 	if (music.duration > 0 && !music.paused) {
 		music.pause();
 
-		playing_icon.style.display = "none";
+		playing_icon.style.display = "inline";
 		paused_icons.forEach((line) => {
-			line.style.display = "inline";
+			line.style.display = "none";
 		});
 	} else {
 		music.play();
 
-		playing_icon.style.display = "inline";
+		playing_icon.style.display = "none";
 		paused_icons.forEach((line) => {
-			line.style.display = "none";
+			line.style.display = "inline";
 		});
 	}
 });

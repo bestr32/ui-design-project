@@ -122,7 +122,7 @@ form button:hover,
 form button:focus {
   background-color: var(--green-hover);
   outline: 2px solid var(--green-focus);
-  transition: outline 0.3s;[]
+  transition: outline 0.3s;
 }
 
 h1 {
