@@ -33,7 +33,7 @@ section {
   margin: 0 auto;
   text-align: center;
   box-shadow: 0 0 1rem #0002;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: white;
   padding: 1rem;
   border: 1px solid #0805;
@@ -87,7 +87,7 @@ form {
 }
 
 input {
-  border-radius: 5px;
+  border-radius: 15px;
   /* background-color: #a3e4cb; */
   border: none;
   padding: 0.5rem 0.5rem;
@@ -106,7 +106,7 @@ body *:focus {
 }
 
 form button {
-  width: 30%;
+  width: 35%;
   align-self: flex-end;
   border: none;
   background-color: #a3e4cb;
@@ -114,8 +114,8 @@ form button {
   padding: 0.5rem 0;
   cursor: pointer;
   outline-offset: 1px;
-  outline: 2px solid #a3e4cb;
   margin-top: 1rem;
+  border-radius: 20px;
 }
 
 form button:hover,
