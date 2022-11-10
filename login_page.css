@@ -81,9 +81,9 @@ footer::before {
 form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   width: 70%;
-  margin: 3.3rem auto;
+  margin: 2.3rem auto;
 }
 
 input {
@@ -93,6 +93,7 @@ input {
   padding: 0.5rem 0.5rem;
   background-color: #e6ebec;
   outline: 2px solid white;
+  width: 100%;
 }
 
 input:focus {
@@ -114,6 +115,7 @@ form button {
   cursor: pointer;
   outline-offset: 1px;
   outline: 2px solid #a3e4cb;
+  margin-top: 1rem;
 }
 
 form button:hover,
@@ -125,7 +127,7 @@ form button:focus {
 
 h1 {
   letter-spacing: 1px;
-  margin: 2rem;
+  margin: 1rem;
   font-weight: 200;
 }
 
@@ -149,4 +151,32 @@ footer a:hover {
   background-color: #a3e4cb;
   color: black;
   box-shadow: 0 0 0.3rem #0003;
+}
+
+label {
+  position: absolute;
+  color: #888;
+  cursor: text;
+  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  transition: top 0.3s, left 0.3s, font-size 0.3s;
+  font-size: 0.9rem;
+}
+
+input:placeholder-shown + label {
+  left: 10px;
+  top: 50%;
+  font-size: 1rem;
+}
+
+input:focus + label {
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+.input-holder {
+  position: relative;
+  padding: 1rem 0;
 }
