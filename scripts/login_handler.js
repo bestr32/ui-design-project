@@ -25,7 +25,7 @@ login_form.addEventListener("submit", (e) => {
 			"Content-type": "application/json; charset=UTF-8",
 		},
 
-		// credentials: "include",
+		credentials: "include",
 	})
 		.then((res) => res.json())
 		.then((data) => {
