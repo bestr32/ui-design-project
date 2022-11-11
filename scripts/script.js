@@ -14,39 +14,39 @@ const BASE_LINK = `http://www.last.fm/api/auth/?api_key=${API_KEY}`;
 // 5: "tag"
 // 6: "track"
 const fetch_music = (query_type, query_subtype, artist_name = "") => {
-	let link = `https://ws.audioscrobbler.com/2.0/?method=${query_type}.${query_subtype}&artist=${artist_name}&api_key=${API_KEY}&format=json`;
+  let link = `https://ws.audioscrobbler.com/2.0/?method=${query_type}.${query_subtype}&artist=${artist_name}&api_key=${API_KEY}&format=json`;
 
-	return fetch(link).then((res) => {
-		return res.json();
-	});
+  return fetch(link).then((res) => {
+    return res.json();
+  });
 };
 
 const fetch_audio = (track_title) => {
-	return fetch(
-		`http://localhost:3000/track?title=${encodeURIComponent(track_title)}`
-	).then((res) => res.json());
+  return fetch(
+    `http://localhost:3000/track?title=${encodeURIComponent(track_title)}`
+  ).then((res) => res.json());
 };
 
 // Helper function to create elements with less headache and typing.
 const create_element = (type, classes = 0, content = "") => {
-	let temp = document.createElement(type);
+  let temp = document.createElement(type);
 
-	if (classes)
-		for (let i = 0; i < classes.length; i++) temp.classList.add(classes[i]);
+  if (classes)
+    for (let i = 0; i < classes.length; i++) temp.classList.add(classes[i]);
 
-	temp.textContent = content;
+  temp.textContent = content;
 
-	return temp;
+  return temp;
 };
 
 const convert_time = (time) => {
-	let mins = Math.floor(time / 60);
+  let mins = Math.floor(time / 60);
 
-	if (mins < 10) mins = "0" + String(mins);
+  if (mins < 10) mins = "0" + String(mins);
 
-	let secs = Math.floor(time % 60);
+  let secs = Math.floor(time % 60);
 
-	if (secs < 10) secs = "0" + String(secs);
+  if (secs < 10) secs = "0" + String(secs);
 
-	return mins + ":" + secs;
+  return mins + ":" + secs;
 };
