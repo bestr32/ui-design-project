@@ -49,3 +49,35 @@ register_form.addEventListener("submit", (e) => {
 	register_form.blur();
 	e.target.reset();
 });
+
+let password_input = document.getElementById("password");
+
+password_input.addEventListener("input", (e) => {
+	let password_regex = "^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$";
+	let password = e.composedPath()[0].value;
+
+	if (!password.match(password_regex)) {
+		add_rule(`#password:focus + label[for="password"]::after`, {
+			display: "none",
+		});
+	} else {
+		add_rule(`#password:focus + label[for="password"]::after`, {
+			display: "block",
+		});
+	}
+});
+
+let add_rule = (function (style) {
+	var sheet = document.head.appendChild(style).sheet;
+	return function (selector, css) {
+		var propText =
+			typeof css === "string"
+				? css
+				: Object.keys(css)
+						.map(function (p) {
+							return p + ":" + (p === "content" ? "'" + css[p] + "'" : css[p]);
+						})
+						.join(";");
+		sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+	};
+})(document.createElement("style"));
