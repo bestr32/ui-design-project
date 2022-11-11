@@ -112,10 +112,15 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 					document
 						.getElementById("aside-search-results")
 						.classList.toggle("hide-element");
+
+					display_is_pausing();
+
+					search_results_div.style.overflowY = "none";
 				});
 
 				link_wrapper.appendChild(video_data_div);
 
+				search_results_div.style.overflowY = "scroll";
 				search_results_div.appendChild(link_wrapper);
 			}
 		});
@@ -127,6 +132,7 @@ document
 	.getElementById("aside-search-results")
 	.addEventListener("click", () => {
 		search_results_div.classList.toggle("hide-element");
+		search_results_div.style.overflowY = "scroll";
 		document
 			.getElementById("aside-search-results")
 			.classList.toggle("hide-element");
