@@ -1,5 +1,9 @@
 /* This is CSS styling for the dialogs that show when an input is focused. */
 
+:root {
+  --show: none;
+}
+
 /* Generic styling for all dialogs (as pseudoelements. */
 label[for="username"]::after,
 label[for="email"]::after,
@@ -10,7 +14,7 @@ label[for="password2"]::after {
   background-image: linear-gradient(180deg, #000, #333);
   box-shadow: 0 0 0.2rem #1113;
   line-height: 1.5;
-  display: none;
+  display: var(--show);
   left: 270px;
   text-align: justify;
   padding: 0.5rem;
@@ -51,8 +55,15 @@ label[for="password2"]::after {
 #email:focus + label[for="email"]::after,
 #password:focus + label[for="password"]::after,
 #password2:focus + label[for="password2"]::after {
-  display: block;
+  --show: block;
+  display: var(--show);
   animation: show_up 0.3s cubic-bezier(1, -0.02, 0.62, 0.7) forwards;
+}
+
+#username:not(:placeholder-shown) + label[for="username"]::after,
+#email:not(:placeholder-shown) + label[for="email"]::after,
+#password2:not(:placeholder-shown) + label[for="password2"]::after {
+  display: none;
 }
 
 @keyframes show_up {
