@@ -1,0 +1,64 @@
+/* This is CSS styling for the dialogs that show when an input is focused. */
+
+/* Generic styling for all dialogs (as pseudoelements. */
+label[for="username"]::after,
+label[for="email"]::after,
+label[for="password"]::after,
+label[for="password2"]::after {
+  position: absolute;
+  background-color: #014;
+  background-image: linear-gradient(180deg, #000, #333);
+  box-shadow: 0 0 0.2rem #1113;
+  line-height: 1.5;
+  display: none;
+  left: 270px;
+  text-align: justify;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+label[for="username"]::after {
+  width: max-content;
+}
+label[for="email"]::after {
+  width: max-content;
+}
+label[for="password"]::after {
+  width: clamp(200px, 60vw, 330px);
+}
+label[for="password2"]::after {
+  width: clamp(200px, 50vw, 300px);
+}
+
+/* Messages for the dialogs. */
+label[for="username"]::after {
+  content: "This will be the name that you use to login.";
+}
+
+label[for="email"]::after {
+  content: "This will be the email associated with your account.";
+}
+label[for="password"]::after {
+  content: "The password must consist of at least 8 characters, 1 digit (0-9), 1 uppercase letter (A-Z), and 1 special character (e.g.: @)";
+}
+label[for="password2"]::after {
+  content: "Typing the password twice ensures you haven't made a mistake.";
+}
+
+/* Display the dialog when an input is focused. */
+#username:focus + label[for="username"]::after,
+#email:focus + label[for="email"]::after,
+#password:focus + label[for="password"]::after,
+#password2:focus + label[for="password2"]::after {
+  display: block;
+  animation: show_up 0.3s cubic-bezier(1, -0.02, 0.62, 0.7) forwards;
+}
+
+@keyframes show_up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
