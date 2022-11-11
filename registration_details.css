@@ -21,13 +21,14 @@ label[for="username"]::after {
   width: max-content;
 }
 label[for="email"]::after {
-  width: max-content;
+  width: clamp(200px, 60vw, 380px);
+  white-space: pre;
 }
 label[for="password"]::after {
-  width: clamp(200px, 60vw, 330px);
+  width: clamp(200px, 60vw, 420px);
 }
 label[for="password2"]::after {
-  width: clamp(200px, 50vw, 300px);
+  width: clamp(200px, 50vw, 370px);
 }
 
 /* Messages for the dialogs. */
@@ -36,13 +37,13 @@ label[for="username"]::after {
 }
 
 label[for="email"]::after {
-  content: "This will be the email associated with your account.";
+  content: "This will be the email that is associated with your account.\a You will also be able to login with your email.";
 }
 label[for="password"]::after {
-  content: "The password must consist of at least 8 characters, 1 digit (0-9), 1 uppercase letter (A-Z), and 1 special character (e.g.: @)";
+  content: "The password must consist of at least 8 characters, 1 digit (0-9), 1 uppercase letter (A-Z), and 1 special character (e.g. @).";
 }
 label[for="password2"]::after {
-  content: "Typing the password twice ensures you haven't made a mistake.";
+  content: "Typing the password in twice ensures that you didn't make any mistakes the first time.";
 }
 
 /* Display the dialog when an input is focused. */
